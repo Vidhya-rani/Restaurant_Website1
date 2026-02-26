@@ -1,95 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>The Essence</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-style: ;
-            margin: 0;
-            background-color: #fff;
-            color: #333;
-        }
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 30px;
-            background-color: hsl(0, 0%, 90%);
-        }
-        nav a {
-            margin-left: 20px;
-            font-size: 18px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: blue;
-        }
-        .icon {
-  width: 50px;
-  height: 50px;
-  background-image: url('images/icon.png');
-  background-size: cover;
-  display: inline-block;
-}
-
-       h1, h2, h3, h4 {
-            text-align: center;
-            color: #333;
-        }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin: 30px 50px;
-            justify-items: center;
-        }
-        .menu-item {
-            background: #f9f9f9;
-            border-radius: 10px;
-            text-align: center;
-            padding: 15px;
-            width: 220px;
-            box-shadow: 0 3px 6px rgba(41, 40, 40, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .menu-item:hover {
-    background-color: #ffe6cc;  /* soft peach-orange hover */
-    transform: translateY(-5px);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-        .menu-item img {
-            width: 200px;
-            height: 150px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        .menu-item p {
-            margin-top: 10px;
-            font-weight: bold;
-            font-size: 17px;
-            color: #333;
-        }
-        section {
-            padding-bottom: 50px;
-        }
-        #home {
-  background: url('restbgcolor.png') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  position: relative;
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
 <header>
-   <h1 style="font-size: 28px; font-weight: bold; color:black;">
-    The Essence 
-    <img src="The Essence icon.png" alt="The Essence Icon" style="width:98px; height:68px; vertical-align: middle;">
-</h1>
+   <h1 style="font-size:28px; font-weight:bold; color:white;">
+        The Essence 
+        <img src="The Essence icon.png" 
+             alt="The Essence Icon" 
+             style="width:98px; height:68px; vertical-align:middle;">
+   </h1>
 
     <nav>
         <a href="#home">Home</a>
@@ -98,222 +23,171 @@
         <a href="#reservations">Reservations</a>
         <a href="#contact">Contact</a>
     </nav>
+ 
+<div class="cart" id="cartIcon">
+    🛒 <span id="cartCount">0</span>
+</div>
+
+<div id="cartPanel" class="cart-panel">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <button id="clearCartBtn">Clear Cart</button>
+</div>
+
+<button id="checkoutBtn">Checkout</button>
+
+
+
+
+    <button id="themeToggle">Dark</button>
+
 </header>
 
+<!-- HOME -->
 <section id="home">
   <div style="height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; 
               text-align:center; background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
               url('restbgcolor.png') center/cover no-repeat; color:white; padding:0 20px;">
-    <h1 style="font-size:3rem; margin-bottom:15px;">Welcome to <span style="color:#f0c040;">The Essence</span></h1>
-    <p style="font-size:1.2rem; margin-bottom:15px;">Where flavor, comfort, and elegance come together.</p>
-    <a href="#menu" style="padding:12px 25px; border-radius:20px; background:#51504f; color:white; text-decoration:none; font-weight:bold;">🍴 View Menu</a>
+    <h1 style="font-size:3rem; margin-bottom:15px;">
+        Welcome to <span style="color:#f0c040;">The Essence</span>
+    </h1>
+    <p style="font-size:1.2rem; margin-bottom:15px;">
+        Where flavor, comfort, and elegance come together.
+    </p>
+    <a href="#menu" 
+       style="padding:12px 25px; border-radius:20px; background:#51504f; 
+              color:white; text-decoration:none; font-weight:bold;">
+        🍴 View Menu
+    </a>
   </div>
 </section>
 
+
+<!-- MENU -->
 <section id="menu">
-    <h1>Our Menu</h1>
-    <!-- Starters -->
-    <h2>Starters</h2>
-    <h3>Veg Starters</h3>
-    <div class="menu-grid">
-        <div class="menu-item"><img src="french-fries.webp"><p>Peri peri Fries</p> <p class="item-price">₹90</p></div>
-        <div class="menu-item"><img src="paneer-tikka.jpg"><p>Paneer Tikka</p> <p class="item-price">₹120</p></div>
-        <div class="menu-item"><img src="Chilli-paneer-dry.jpg"><p>Chilli Paneer</p> <p class="item-price">₹130</p></div>
-        <div class="menu-item"><img src="veg springrolls.png"><p>Veg Spring Rolls</p> <p class="item-price">₹160</p></div>
-        <div class="menu-item"><img src="garlic-bread-4.jpg"><p>Garlic Bread</p> <p class="item-price">₹90</p></div>
-        <div class="menu-item"><img src="veg-lollipop.jpg"><p>Veg Lollipop</p> <p class="item-price">₹150</p></div>
-        <div class="menu-item"><img src="chessecornball.webp"><p>Cheese Corn Balls</p> <p class="item-price">₹130</p></div>
-        <div class="menu-item"><img src="veg pizza.jpg"><p>Veg Pizza</p> <p class="item-price">₹150</p></div>
-        <div class="menu-item"><img src="chillibabaycorn.png"><p>Chilli Baby Corn</p> <p class="item-price">₹130</p></div>
-        <div class="menu-item"><img src="veg nuggets.jpg"><p>Veg Nuggets</p><p class="item-price">₹120</p></div>
-        <div class="menu-item"><img src="Crispy Corn.jpeg"><p>Crispy Corn</p> <p class="item-price">₹160</p></div>
-        <div class="menu-item"><img src="Veg Manchurian.jpg"><p>Veg Manchurian</p> <p class="item-price">₹100</p></div>
-        <div class="menu-item"><img src="aloo-tikki.jpg"><p>Aloo Tikki</p> <p class="item-price">₹100</p></div>
-        <div class="menu-item"><img src="Masala-Papad.webp"><p>Masala Papad</p> <p class="item-price">₹80</p></div>
-    </div>
-    <h3>Non-Veg Starters</h3>
-    <div class="menu-grid">
-        <div class="menu-item"><img src="Chicken-tikka.webp"><p>Chicken Tikka</p> <p class="item-price">₹150</p></div>
-        <div class="menu-item"><img src="chilli-chicken.jpg"><p>Chilli Chicken</p> <p class="item-price">₹140</p></div>
-        <div class="menu-item"><img src="Chicken Rolls.jpeg"><p>Chicken Rolls</p> <p class="item-price">₹170</p></div>
-        <div class="menu-item"><img src="Chicken Lollipop.jpeg"><p>Chicken Lollipop</p> <p class="item-price">₹200</p></div>
-        <div class="menu-item"><img src="Chicken65.jpg"><p>Chicken 65</p> <p class="item-price">₹190</p></div>
-        <div class="menu-item"><img src="fish-fry.jpg"><p>Fish Fries</p> <p class="item-price">₹190</p></div>
-        <div class="menu-item"><img src="Prawn fries.jpg"><p>Prawn Fries</p> <p class="item-price">₹230</p></div>
-        <div class="menu-item"><img src="Muttonsoup.jpg"><p>Mutton Soup</p> <p class="item-price">₹150</p></div>
-        <div class="menu-item"><img src="Chicken Soup.jpg"><p>Chicken Soup</p> <p class="item-price">₹120</p></div>
-        <div class="menu-item"><img src="Mutton Kebab.jpg"><p>Mutton Kebab</p> <p class="item-price">₹200</p></div>
-        <div class="menu-item"><img src="Tandoori Chicken.jpg"><p>Tandoori Chicken</p> <p class="item-price">₹210</p></div>
-        <div class="menu-item"><img src="Chicken Wings.jpg"><p>Chicken Wings</p> <p class="item-price">₹190</p></div>
-        <div class="menu-item"><img src="Chicken Kebab.jpg"><p>Chicken Kebab</p> <p class="item-price">₹220</p></div>
-        <div class="menu-item"><img src="Egg Roll.jpg"><p>Egg Roll</p> <p class="item-price">₹100</p></div>
-    </div>
-    <!-- Main Course -->
-    <h2>Main Course</h2>
-    <h3>Veg</h3>
-    <div class="menu-grid">
-        <div class="menu-item"><img src="paneer-butter.jpg"><p>Paneer Butter Masala</p> <p class="item-price">₹220</p></div>
-        <div class="menu-item"><img src="Paneer curry.jpeg"><p>Paneer Curry</p> <p class="item-price">₹120</p></div>
-        <div class="menu-item"><img src="Palak Paneer.jpeg"><p>Palak Paneer</p> <p class="item-price">₹140</p></div>
-        <div class="menu-item"><img src="Kadai Paneer.webp"><p>Kadai Paneer</p> <p class="item-price">₹130</p></div>
-        <div class="menu-item"><img src="Dal Makhani.jpeg"><p>Dal Makhani</p> <p class="item-price">₹90</p></div>
-        <div class="menu-item"><img src="Dal Tadka.jpg"><p>Dal Tadka</p> <p class="item-price">₹70</p></div>
-        <div class="menu-item"><img src="Chana Masala.jpg"><p>Chana Masala</p> <p class="item-price">₹100</p></div>
-        <div class="menu-item"><img src="Aloo Gobi.jpeg"><p>Aloo Gobi</p> <p class="item-price">₹100</p></div>
-        <div class="menu-item"><img src="Veg Biryani.jpeg"><p>Veg Biryani</p> <p class="item-price">₹130</p></div>
-        <div class="menu-item"><img src="veg-pulao.jpg"><p>Veg Pulao</p> <p class="item-price">₹120</p></div>
-        <div class="menu-item"><img src="jeera-rice.webp"><p>Jeera Rice</p> <p class="item-price">₹100</p></div>
-        <div class="menu-item"><img src="Steamed Rice.jpeg"><p>Steamed Rice</p> <p class="item-price">₹30</p></div>
-        <div class="menu-item"><img src="veg friedrice.webp"><p>Veg Fried Rice</p> <p class="item-price">₹140</p></div>
-        <div class="menu-item"><img src="Veg Noodles.jpeg"><p>Veg Noodles</p> <p class="item-price">₹130</p></div>
-    </div>
+<h1>Our Menu</h1>
+
+<!-- Starters -->
+<h2>Starters</h2>
+<h3>Veg Starters</h3>
+<div class="menu-grid">
+    <div class="menu-item"><img src="french-fries.webp"><p>Peri peri Fries</p><p class="item-price">₹90</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="paneer-tikka.jpg"><p>Paneer Tikka</p><p class="item-price">₹120</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chilli-paneer-dry.jpg"><p>Chilli Paneer</p><p class="item-price">₹130</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="veg springrolls.png"><p>Veg Spring Rolls</p><p class="item-price">₹160</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="garlic-bread-4.jpg"><p>Garlic Bread</p><p class="item-price">₹90</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="veg-lollipop.jpg"><p>Veg Lollipop</p><p class="item-price">₹150</p> <button class="add-to-cart">Add to Cart</button> </div>
+    <div class="menu-item"><img src="chessecornball.webp"><p>Cheese Corn Balls</p><p class="item-price">₹130</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="veg pizza.jpg"><p>Veg Pizza</p><p class="item-price">₹150</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="chillibabaycorn.png"><p>Chilli Baby Corn</p><p class="item-price">₹130</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="veg nuggets.jpg"><p>Veg Nuggets</p><p class="item-price">₹120</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Crispy Corn.jpeg"><p>Crispy Corn</p><p class="item-price">₹160</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Veg Manchurian.jpg"><p>Veg Manchurian</p><p class="item-price">₹100</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="aloo-tikki.jpg"><p>Aloo Tikki</p><p class="item-price">₹100</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Masala-Papad.webp"><p>Masala Papad</p><p class="item-price">₹80</p> <button class="add-to-cart">Add to Cart</button></div>
+</div>
+
+<h3>Non-Veg Starters</h3>
+<div class="menu-grid">
+    <div class="menu-item"><img src="Chicken-tikka.webp"><p>Chicken Tikka</p><p class="item-price">₹150</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="chilli-chicken.jpg"><p>Chilli Chicken</p><p class="item-price">₹140</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken Rolls.jpeg"><p>Chicken Rolls</p><p class="item-price">₹170</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken Lollipop.jpeg"><p>Chicken Lollipop</p><p class="item-price">₹200</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken65.jpg"><p>Chicken 65</p><p class="item-price">₹190</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="fish-fry.jpg"><p>Fish Fries</p><p class="item-price">₹190</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Prawn fries.jpg"><p>Prawn Fries</p><p class="item-price">₹230</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Muttonsoup.jpg"><p>Mutton Soup</p><p class="item-price">₹150</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken Soup.jpg"><p>Chicken Soup</p><p class="item-price">₹120</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Mutton Kebab.jpg"><p>Mutton Kebab</p><p class="item-price">₹200</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Tandoori Chicken.jpg"><p>Tandoori Chicken</p><p class="item-price">₹210</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken Wings.jpg"><p>Chicken Wings</p><p class="item-price">₹190</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken Kebab.jpg"><p>Chicken Kebab</p><p class="item-price">₹220</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Egg Roll.jpg"><p>Egg Roll</p><p class="item-price">₹100</p> <button class="add-to-cart">Add to Cart</button></div>
+</div>
+
+<!-- Main Course -->
+<h2>Main Course</h2>
+<h3>Veg</h3>
+<div class="menu-grid">
+    <div class="menu-item"><img src="paneer-butter.jpg"><p>Paneer Butter Masala</p><p class="item-price">₹220</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Paneer curry.jpeg"><p>Paneer Curry</p><p class="item-price">₹120</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Palak Paneer.jpeg"><p>Palak Paneer</p><p class="item-price">₹140</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Kadai Paneer.webp"><p>Kadai Paneer</p><p class="item-price">₹130</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Dal Makhani.jpeg"><p>Dal Makhani</p><p class="item-price">₹90</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Dal Tadka.jpg"><p>Dal Tadka</p><p class="item-price">₹70</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chana Masala.jpg"><p>Chana Masala</p><p class="item-price">₹100</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Aloo Gobi.jpeg"><p>Aloo Gobi</p><p class="item-price">₹100</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Veg Biryani.jpeg"><p>Veg Biryani</p><p class="item-price">₹130</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="veg-pulao.jpg"><p>Veg Pulao</p><p class="item-price">₹120</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="jeera-rice.webp"><p>Jeera Rice</p><p class="item-price">₹100</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Steamed Rice.jpeg"><p>Steamed Rice</p><p class="item-price">₹30</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="veg friedrice.webp"><p>Veg Fried Rice</p><p class="item-price">₹140</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Veg Noodles.jpeg"><p>Veg Noodles</p><p class="item-price">₹130</p> <button class="add-to-cart">Add to Cart</button></div>
+</div>
+
 <h3>Non-Veg</h3>
 <div class="menu-grid">
-    <div class="menu-item"><img src="butter-chicken.jpg"><p>Butter Chicken</p> <p class="item-price">₹150</p></div>
-    <div class="menu-item"><img src="chicken-curry.jpg"><p>Chicken Curry</p> <p class="item-price">₹140</p></div>
-    <div class="menu-item"><img src="Chicken Biryani.jpg"><p>Chicken Biryani</p> <p class="item-price">₹220</p></div>
-    <div class="menu-item"><img src="Egg Curry.jpg"><p>Egg Curry</p> <p class="item-price">₹100</p></div>
-    <div class="menu-item"><img src="Mutton Curry.jpeg"><p>Mutton Curry</p> <p class="item-price">₹250</p></div>
-    <div class="menu-item"><img src="Fish-curry.jpg"><p>Fish Curry</p> <p class="item-price">₹230</p></div>
-    <div class="menu-item"><img src="prawn-curry.jpg"><p>Prawn Curry</p> <p class="item-price">₹260</p></div>
-    <div class="menu-item"><img src="Chicken-Pulao.jpg"><p>Chicken Pulao</p> <p class="item-price">₹210</p></div>
-    <div class="menu-item"><img src="Egg-Fried-Rice.jpg"><p>Egg Fried Rice</p> <p class="item-price">₹130</p></div>
-    <div class="menu-item"><img src="Chicken Fried Rice.jpg"><p>Chicken Fried Rice</p> <p class="item-price">₹120</p></div>
-    <div class="menu-item"><img src="Chicken Noodles.jpeg"><p>Chicken Noodles</p> <p class="item-price">₹150</p></div>
-    <div class="menu-item"><img src="Mutton-Biryani.jpg"><p>Mutton Biryani</p> <p class="item-price">₹290</p></div>
-    <div class="menu-item"><img src="EGgBiryani-2.jpg"><p>Egg Biryani</p> <p class="item-price">₹170</p></div>
-    <div class="menu-item"><img src="Non veg-pasta.jpeg"><p>Non-Veg Pasta</p> <p class="item-price">₹100/p></div>
+    <div class="menu-item"><img src="butter-chicken.jpg"><p>Butter Chicken</p><p class="item-price">₹150</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="chicken-curry.jpg"><p>Chicken Curry</p><p class="item-price">₹140</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken Biryani.jpg"><p>Chicken Biryani</p><p class="item-price">₹220</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Egg Curry.jpg"><p>Egg Curry</p><p class="item-price">₹100</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Mutton Curry.jpeg"><p>Mutton Curry</p><p class="item-price">₹250</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Fish-curry.jpg"><p>Fish Curry</p><p class="item-price">₹230</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="prawn-curry.jpg"><p>Prawn Curry</p><p class="item-price">₹260</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken-Pulao.jpg"><p>Chicken Pulao</p><p class="item-price">₹210</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Egg-Fried-Rice.jpg"><p>Egg Fried Rice</p><p class="item-price">₹130</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken Fried Rice.jpg"><p>Chicken Fried Rice</p><p class="item-price">₹120</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Chicken Noodles.jpeg"><p>Chicken Noodles</p><p class="item-price">₹150</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Mutton-Biryani.jpg"><p>Mutton Biryani</p><p class="item-price">₹290</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="EGgBiryani-2.jpg"><p>Egg Biryani</p><p class="item-price">₹170</p> <button class="add-to-cart">Add to Cart</button></div>
+    <div class="menu-item"><img src="Non veg-pasta.jpeg"><p>Non-Veg Pasta</p><p class="item-price">₹100</p> <button class="add-to-cart">Add to Cart</button></div>
 </div>
-<!-- Rotis -->
-<h3>Rotis</h3>
-<div class="menu-grid">
-    <div class="menu-item"><img src="Butter-Naan.jpg"><p>Butter Naan</p> <p class="item-price">₹40</p></div>
-    <div class="menu-item"><img src="Garlic Naan.jpeg"><p>Garlic Naan</p> <p class="item-price">₹50</p></div>
-    <div class="menu-item"><img src="Plain Naan.jpeg"><p>Plain Naan</p> <p class="item-price">₹30</p></div>
-    <div class="menu-item"><img src="Roti.webp"><p>Roti</p> <p class="item-price">₹25</p></div>
-    <div class="menu-item"><img src="Butter-Roti.jpg"><p>Butter Roti</p> <p class="item-price">₹35</p></div>
-    <div class="menu-item"><img src="plain Paratha.jpeg"><p>Plain Paratha</p> <p class="item-price">₹40</p></div>
-    <div class="menu-item"><img src="Stuffed Paratha.jpeg"><p>Stuffed Paratha</p> <p class="item-price">₹60</p></div>
-    <div class="menu-item"><img src="Missi Roti.jpg"><p>Missi Roti</p> <p class="item-price">₹45</p></div>
-</div>
-<!-- Desserts -->
-<h3>Desserts</h3>
-<div class="menu-grid">
-    <div class="menu-item"><img src="Ice Cream.jpg"><p>Ice Cream</p> <p class="item-price">₹80</p></div>
-    <div class="menu-item"><img src="Gulab Jamun.jpeg"><p>Gulab Jamun</p> <p class="item-price">₹50</p></div>
-    <div class="menu-item"><img src="Rasmalai.jpg"><p>Rasmalai</p> <p class="item-price">₹70</p></div>
-    <div class="menu-item"><img src="Fruit Salad.jpeg"><p>Fruit Salad</p> <p class="item-price">₹90</p></div>
-    <div class="menu-item"><img src="Brownie with Ice Cream.jpeg"><p>Brownie with Ice Cream</p> <p class="item-price">₹120</p></div>
-    <div class="menu-item"><img src="Chocolate Lava Cake.jpeg"><p>Chocolate Lava Cake</p> <p class="item-price">₹130</p></div>
-    <div class="menu-item"><img src="Custard.webp"><p>Custard</p> <p class="item-price">₹60</p></div>
-</div>
-<!-- Beverages -->
-<h3>Beverages</h3>
-<div class="menu-grid">
-    <div class="menu-item"><img src="Soft Drinks.jpeg"><p>Soft Drinks</p> <p class="item-price">₹40</p></div>
-    <div class="menu-item"><img src="Fresh Lime Soda.jpg"><p>Fresh Lime Soda</p> <p class="item-price">₹50</p></div>
-    <div class="menu-item"><img src="Fresh Lime Water.jpg"><p>Fresh Lime Water</p> <p class="item-price">₹40</p></div>
-    <div class="menu-item"><img src="Cold Coffee.jpg"><p>Cold Coffee</p> <p class="item-price">₹70</p></div>
-    <div class="menu-item"><img src="Tea.jpeg"><p>Tea</p> <p class="item-price">₹30</p></div>
-    <div class="menu-item"><img src="Coffee.jpeg"><p>Coffee</p> <p class="item-price">₹40</p></div>
-    <div class="menu-item"><img src="Masala tea.jpeg"><p>Masala Tea</p> <p class="item-price">₹35</p></div>
-    <div class="menu-item"><img src="masala-coffee.webp"><p>Masala Coffee</p> <p class="item-price">₹50</p></div>
-    <div class="menu-item"><img src="Milkshakes.jpg"><p>Milkshakes</p> <p class="item-price">₹80</p></div>
-    <div class="menu-item"><img src="Mojitos.jpeg"><p>Mojitos</p> <p class="item-price">₹90</p></div>
-    <div class="menu-item"><img src="Mocktails.jpg"><p>Mocktails</p> <p class="item-price">₹80</p></div>
-    <div class="menu-item"><img src="Juices.jpeg"><p>Juices</p> <p class="item-price">₹60</p></div>
-    <div class="menu-item"><img src="Hot Chocolate.jpeg"><p>Hot Chocolate</p> <p class="item-price">₹70</p></div>
-    <div class="menu-item"><img src="Lassi.webp"><p>Lassi</p> <p class="item-price">₹50</p></div>
-</div>
+
 </section>
 
-<section id="about" style="background-color:#f9f9f9; padding:60px 80px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;">
-    <!-- Image -->
+
+<section id="about">
+
     <div style="flex:1 1 45%; min-width:300px;">
         <img src="The Essence.png" 
              alt="The Essence Restaurant Interior" 
-             style="width:100%; height:auto; border-radius:10px; box-shadow: 0 6px 20px rgba(83, 82, 82, 0.1);">
+             style="width:100%; height:auto; border-radius:10px;">
     </div>
-    <!-- Text Content -->
+
     <div style="flex:1 1 45%; min-width:300px; padding:20px;">
-        <h2 style="font-size:32px; color:#333; margin-bottom:15px;">About <span style="color:#1E90FF;">The Essence</span> 🍴</h2>
-        <p style="color:#555; font-size:18px; line-height:1.6;">
-            Welcome to <strong>The Essence</strong> — a place where every meal is made with care and passion.  
-            Our restaurant is designed to be warm and inviting, so you can relax and enjoy your food.  
-            We use fresh ingredients to create dishes full of flavor, from delicious starters to hearty main courses.  
-            At <strong>The Essence</strong>, every bite is meant to give you a delightful dining experience.  
-            Come and taste the true essence of great food and comfort.
+        <h2>About The Essence 🍴</h2>
+        <p>
+            Welcome to <strong>The Essence</strong> — a place where every meal is made with care and passion.
+            Our restaurant is designed to be warm and inviting, so you can relax and enjoy your food.
+            We use fresh ingredients to create dishes full of flavor, from delicious starters to hearty main courses.
+            At The Essence, every bite is meant to give you a delightful dining experience.
         </p>
-        <a href="#menu" style="display:inline-block; margin-top:20px; background-color:#1E90FF; color:white; text-decoration:none; padding:12px 25px; border-radius:8px; font-weight:bold; transition: 0.3s;">
-            Explore Menu
-        </a>
     </div>
-</section>
-<section id="reservations" style="background-color:#f5f5f5; padding:60px 20px; text-align:center;">
-    <h2 style="font-size:32px; margin-bottom:20px;">Reserve Your Table 🍽️</h2>
-    <p style="font-size:18px; margin-bottom:30px;">Book your table now. Enter details below:</p>
 
-    <form id="reservationForm" style="max-width:400px; margin:0 auto; display:flex; flex-direction:column; gap:15px;">
-        <input type="text" id="name" placeholder="Your Name" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
-        <input type="number" id="people" placeholder="Number of People" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
-        <input type="time" id="time" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
-        <input type="number" id="payment" placeholder="Advance Payment (₹)" required style="padding:12px; border-radius:8px; border:1px solid #ccc;">
-        <button type="button" onclick="bookTable()" style="padding:12px; border:none; border-radius:8px; background-color:#1E90FF; color:white; font-weight:bold; cursor:pointer;">
-            Book Table
-        </button>
+</section>
+
+
+<!-- Reservations -->
+<section id="reservations">
+    <h2>Reserve Your Table</h2>
+    <form id="reservationForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="number" id="people" placeholder="Number of People" required>
+        <input type="time" id="time" required>
+        <input type="number" id="payment" placeholder="Advance Payment (₹)" required>
+        <button type="button" onclick="bookTable()">Book Table</button>
     </form>
-
-    <div id="reservationResult" style="margin-top:30px; font-size:18px; color:#333;"></div>
+    <div id="reservationResult"></div>
 </section>
-<section id="contact" style="
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #f5f5f5;
-">
-  <p style="color: #555; margin: 5px 0; font-size: 1rem;">📍 Banjara Hills,  The Food City</p>
-  <p style="color: #555; margin: 5px 0; font-size: 1rem;">📞 +91 9989109468</p>
-  <p style="color: #555; margin: 20px 0; font-size: 1rem;">✉️ contact@theessence.com</p>
 
-  <a href="mailto:contact@theessence.com" style="
-    color: #fff;
-    background-color: #51504f;
-    padding: 12px 25px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-  " onmouseover="this.style.backgroundColor='#3d3c3b'" onmouseout="this.style.backgroundColor='#51504f'">
-    Contact Us
-  </a>
-  </section>
-<script>
-function bookTable() {
-    const name = document.getElementById("name").value;
-    const people = document.getElementById("people").value;
-    const time = document.getElementById("time").value;
-    const payment = Number(document.getElementById("payment").value);
+<!-- Contact -->
+<section id="contact">
+    <p>📍 Banjara Hills, The Food City</p>
+    <p>📞 +91 9352675438</p>
+    <p>✉️ contact@theessence.com</p>
+</section>
 
-    if(!name || !people || !time || !payment) {
-        alert("Please fill all fields!");
-        return;
-    }
-
-    const totalCost = payment * people; // total cost is advance per person multiplied by number of people
-
-    document.getElementById("reservationResult").innerHTML = `
-        <p>✅ Thank you, <strong>${name}</strong>! Your table for <strong>${people}</strong> people is reserved at <strong>${time}</strong>.</p>
-        <p>💰 Advance Paid: ₹${payment}</p>
-        <p>💸 Total Cost (Estimated): ₹${totalCost}</p>
-    `;
-
-    // Optional: reset form
-    document.getElementById("reservationForm").reset();
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
