@@ -1,5 +1,5 @@
 // ============================
-// GLOBAL CART (SOURCE OF TRUTH)
+// GLOBAL CART
 // ============================
 
 let cart = [];
@@ -60,34 +60,33 @@ window.addEventListener("DOMContentLoaded", function () {
     // ADD TO CART
     // =========================
 
-   document.querySelectorAll(".add-to-cart").forEach(button => {
+    document.querySelectorAll(".add-to-cart").forEach(button => {
 
-    button.addEventListener("click", function () {
+        button.addEventListener("click", function () {
 
-        // Always reload fresh cart from storage
-        loadCart();
+            loadCart(); // always reload fresh cart
 
-        const item = this.closest(".menu-item");
+            const item = this.closest(".menu-item");
 
-        const name = item.querySelector("p").innerText.trim();
-        const priceText = item.querySelector(".item-price").innerText.trim();
-        const price = Number(priceText.replace(/[^\d]/g, ""));
+            const name = item.querySelector("p").innerText.trim();
+            const priceText = item.querySelector(".item-price").innerText.trim();
+            const price = Number(priceText.replace(/[^\d]/g, ""));
 
-        if (isNaN(price) || price <= 0) return;
+            if (isNaN(price) || price <= 0) return;
 
-        const existing = cart.find(p => p.name === name);
+            const existing = cart.find(p => p.name === name);
 
-        if (existing) {
-            existing.quantity += 1;
-        } else {
-            cart.push({ name, price, quantity: 1 });
-        }
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
 
-        saveCart();
-        updateCartCount();
+            saveCart();
+            updateCartCount();
+        });
+
     });
-
-});
 
     // =========================
     // CLEAR CART
@@ -106,7 +105,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     checkoutBtn.addEventListener("click", function () {
 
-        loadCart(); // always reload latest data
+        loadCart(); // always reload latest cart
 
         if (cart.length === 0) {
             alert("Cart is empty!");
@@ -204,6 +203,8 @@ function renderCart() {
 
 function increaseQuantity(name) {
 
+    loadCart();
+
     const product = cart.find(item => item.name === name);
     if (product) product.quantity += 1;
 
@@ -213,6 +214,8 @@ function increaseQuantity(name) {
 }
 
 function decreaseQuantity(name) {
+
+    loadCart();
 
     const product = cart.find(item => item.name === name);
 
@@ -229,6 +232,8 @@ function decreaseQuantity(name) {
 }
 
 function removeItem(name) {
+
+    loadCart();
 
     cart = cart.filter(item => item.name !== name);
 
